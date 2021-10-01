@@ -34,7 +34,8 @@ const ShoeCard = ({
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
-        <ImageWrapper>
+        <ImageWrapper variant={variant}>
+          <span>{variant}</span>
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
@@ -61,6 +62,18 @@ const Wrapper = styled.article``;
 
 const ImageWrapper = styled.div`
   position: relative;
+  span {
+    color: white;
+    position: absolute;
+    top: 0.75em;
+    right: -0.5em;
+    padding: 0.2em 0.5em;
+    display: ${({ variant }) => variant === 'default' && 'none'};
+    background-color: ${({ variant }) =>
+      variant === 'new-release'
+        ? 'hsla(240, 60%, 63%, 1)'
+        : 'hsla(340, 65%, 47%, 1)'};
+  }
 `;
 
 const Image = styled.img`
