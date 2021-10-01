@@ -42,6 +42,7 @@ const ShoeCard = ({
           <Name>{name}</Name>
           <Price>{formatPrice(price)}</Price>
         </Row>
+        <Spacer size={6} />
         <Row>
           <ColorInfo>{pluralize('Color', numOfColors)}</ColorInfo>
         </Row>
@@ -53,6 +54,7 @@ const ShoeCard = ({
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  width: 30%;
 `;
 
 const Wrapper = styled.article``;
@@ -61,9 +63,14 @@ const ImageWrapper = styled.div`
   position: relative;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 100%;
+`;
 
 const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+
   font-size: 1rem;
 `;
 
